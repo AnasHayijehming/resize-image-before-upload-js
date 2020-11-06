@@ -1,1 +1,1 @@
-# resize-img-js
+# Resize image by javascript
