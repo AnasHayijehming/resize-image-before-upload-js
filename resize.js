@@ -3,7 +3,7 @@ async function resize(fileImg, resizeWidt, imgId = null) {
   const img = await setPromiseOnloadImage(reader)
   const elem = document.createElement('canvas') // create a canvas
 
-  // scale the image to 600 (width) and keep aspect ratio
+  // scale the image to width and keep aspect ratio
   const scaleFactor = resizeWidt / img.width
   elem.width = resizeWidt
   elem.height = img.height * scaleFactor
