@@ -13,7 +13,7 @@ async function resize(fileImg, resizeWidt, imgId = null) {
     ctx.drawImage(img, 0, 0, elem.width, elem.height)
   
     // get the base64-encoded Data URI from the resize image
-    const srcEncoded = ctx.canvas.toDataURL('image/jpeg', 0.2)
+    const srcEncoded = ctx.canvas.toDataURL('image/jpeg', 0.1)
   
     // assign it to thumb src
     if (imgId) document.getElementById(imgId).src = srcEncoded
