@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resize image example</title>
+    <script src="resize.js"></script>
+</head>
+
+<body>
+    <input type="file" id="input-file-image" accept="image/*" />
+    <br>
+    <table style="width: 100%;">
+        <tr>
+            <td style="width: 50%;">
+                <p>image original</p>
+                <img id="image-preview" style="width: 100%;" />
+            </td>
+            <td style="width: 50%;">
+                <p>iamge resize</p>
+                <img id="image-resize" style="width: 100%;" />
+            </td>
+        </tr>
+    </table>
+
+
+    <script>
+        const selectElement = document.getElementById('input-file-image');
+
+        selectElement.addEventListener('change', async (e) => {
+            console.log('onImageChange')
+            const fileImg = e.target.files[0]
+            const reader = new FileReader()
+            reader.readAsDataURL(fileImg)
+            reader.onload = (e) => {
+                document.getElementById('image-preview').src = e.target.result
+            }
+            await resize(fileImg, 600, 'image-resize')
+        });
+    </script>
+</body>
+
+</html>
