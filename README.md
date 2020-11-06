@@ -1,1 +1,1 @@
-# Resize image by javascript
+# Resize image before upload using javascript
